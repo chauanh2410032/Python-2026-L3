@@ -1,0 +1,17 @@
+import numpy as np
+import pandas as pd
+df = pd.read_csv("students.csv")
+print("Display first five rows")
+print(df.head())
+print("Find number of rows and columns")
+print(df.shape)
+print("Select name and GPA")
+print(df[["name", "GPA"]])
+print("Find students with GPA ≥ 3.5")
+print(df[df["GPA"] > 3.5])
+print("Sort students by GPA from Low to High")
+print(df.sort_values("GPA"))
+print("Sort students by GPA from High to Low")
+print(df.sort_values("GPA", ascending=False))
+print("Find average GPA by major")
+print(df.groupby("major")["GPA"].mean())
